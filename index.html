@@ -1,24 +1,60 @@
 <!DOCTYPE html>
-<html data-theme="dark">
+<html>
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title></title>
+    <title>Library</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="./src/pico.min.css" />
-    <link rel="stylesheet" href="./src/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <main class="container">
-      <h1>Library</h1>
-      <blockquote>
-        “The more that you read, the more things you will know. The more that you learn, the more places you’ll go.”
-        <footer>
-          <cite>- Dr. Seuss</cite>
-        </footer>
-      </blockquote>
-    </main>
+    <div class="container">
+      <div class="header">
+        <h2>Library</h2>
+        <h3>A JavaScript Application</h3>
+      </div>
+      <div class="lib">
+        <div class="cp">
+            <button class="btn-add">Add New Book</button>
+        </div>
+        <div class="lb-table">
+            <table id="lib-table">
+                <tr>
+                  <th>Title</th>
+                  <th>Author</th>
+                  <th>Status</th>
+                </tr>
+                <tr>
+                  <td>Fahrenheit 451</td>
+                  <td>Ray Bradbury</td>
+                  <td><button>READ</button></td>
+                </tr>
+                <tr>
+                  <td>A Game of Thrones</td>
+                  <td>George R.R Martin</td>
+                  <td><button>READ</button></td>
+                </tr>
+                <tr>
+                  <td>Of Mice and Men</td>
+                  <td>John Steinbeck</td>
+                  <td><button>READ</button></td>
+                </tr>
+              </table>
+        </div>
+      </div>
+      <div class="footer">
+        <p>Created and designed by <a href="">Adrian Ghorbani <i class="fa fa-link"></i>
+        </a> 2023 | <a href=""> Source Code <i class="fa fa-github"></i></a></p> 
+      </div>
+    </div>
     <script src="" async defer></script>
   </body>
 </html>
