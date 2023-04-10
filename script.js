@@ -27,10 +27,14 @@ function Book(title, author, pages) {
   this.pages = pages;
 }
 
+Book.prototype.isRead = function() {
+  return read = false;
+}
+
 // add book to the library
 function addBookToLibrary(title,author,pages) {
   // do stuff
-  let testObj = new Book('For Whom the Bell Tolls','Ernest Hemingway','400');
+  let testObj = new Book(title,author,pages);
   myLibrary.push(testObj);
 
   let tr = "<tr>";
@@ -91,6 +95,7 @@ closeButton.addEventListener("click", () => closeForm());
 
 function submitNewBook(event) {
   event.preventDefault();
+  closeForm();
   const data = new FormData(event.target);
   const title = data.get('title');
   const author = data.get('author');
