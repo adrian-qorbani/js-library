@@ -23,38 +23,59 @@
       </div>
       <div class="lib">
         <div class="cp">
-            <button class="btn-add">Add New Book</button>
+            <button class="btn-add" id="add-book">Add New Book</button>
+            <div class="form-popup" id="myForm">
+              <form action="/action_page.php" class="form-container">
+                <h2>Add a new Book</h2>
+            
+                <label for="title"><b>Book Title</b></label>
+                <input type="text" placeholder="Enter the book title..." name="title" required>
+            
+                <label for="author"><b>Author</b></label>
+                <input type="text" placeholder="Enter the book author..." name="author" required>
+
+                <label for="pages"><b>Pages</b></label>
+                <input type="text" placeholder="Enter No. of pages..." name="pages" required>
+            
+                <button type="submit" class="btn">ADD</button>
+                <button type="button" class="btn cancel" id="button-cancel">Close</button>
+              </form>
+            </div>
         </div>
         <div class="lb-table">
             <table id="lib-table">
                 <tr>
                   <th>Title</th>
                   <th>Author</th>
-                  <th>Status</th>
+                  <th>Pages</th>
+                  <th>Actions</th>
                 </tr>
                 <tr>
                   <td>Fahrenheit 451</td>
                   <td>Ray Bradbury</td>
-                  <td><button>READ</button></td>
+                  <td>250</td>
+                  <td><button>READ</button> <button class="btn-rm">remove</button></td>
                 </tr>
                 <tr>
                   <td>A Game of Thrones</td>
                   <td>George R.R Martin</td>
-                  <td><button>READ</button></td>
+                  <td>800</td>
+                  <td><button>READ</button> <button class="btn-rm">remove</button></td>
                 </tr>
                 <tr>
                   <td>Of Mice and Men</td>
                   <td>John Steinbeck</td>
-                  <td><button>READ</button></td>
+                  <td>150</td>
+                  <td><button>READ</button> <button class="btn-rm">remove</button></td>
                 </tr>
               </table>
         </div>
       </div>
-      <div class="footer">
+      <div id="footer">
         <p>Created and designed by <a href="">Adrian Ghorbani <i class="fa fa-link"></i>
         </a> 2023 | <a href=""> Source Code <i class="fa fa-github"></i></a></p> 
       </div>
     </div>
-    <script src="" async defer></script>
+    <script src="./script.js" async defer></script>
   </body>
 </html>
