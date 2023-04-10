@@ -18,14 +18,14 @@
   <body>
     <div class="container">
       <div class="header">
-        <h2>Library</h2>
+        <h1>Library</h1>
         <h3>A JavaScript Application</h3>
       </div>
       <div class="lib">
         <div class="cp">
             <button class="btn-add" id="add-book">Add New Book</button>
             <div class="form-popup" id="myForm">
-              <form action="/action_page.php" class="form-container">
+              <form class="form-container" id="form-content">
                 <h2>Add a new Book</h2>
             
                 <label for="title"><b>Book Title</b></label>
@@ -44,30 +44,14 @@
         </div>
         <div class="lb-table">
             <table id="lib-table">
+              <tbody id="tbody">
                 <tr>
                   <th>Title</th>
                   <th>Author</th>
                   <th>Pages</th>
                   <th>Actions</th>
                 </tr>
-                <tr>
-                  <td>Fahrenheit 451</td>
-                  <td>Ray Bradbury</td>
-                  <td>250</td>
-                  <td><button>READ</button> <button class="btn-rm">remove</button></td>
-                </tr>
-                <tr>
-                  <td>A Game of Thrones</td>
-                  <td>George R.R Martin</td>
-                  <td>800</td>
-                  <td><button>READ</button> <button class="btn-rm">remove</button></td>
-                </tr>
-                <tr>
-                  <td>Of Mice and Men</td>
-                  <td>John Steinbeck</td>
-                  <td>150</td>
-                  <td><button>READ</button> <button class="btn-rm">remove</button></td>
-                </tr>
+              </tbody>
               </table>
         </div>
       </div>
