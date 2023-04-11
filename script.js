@@ -38,7 +38,7 @@ function addBookToLibrary(title,author,pages) {
   bookAuthor.innerText = author;
   bookPages.innerText = pages;
   bookRemoveBtn.innerText = 'Remove';
-  bookIsRead.innerText = 'Not Read';
+  bookIsRead.innerText = 'Read?';
 
 
   bookRemoveBtn.addEventListener("click", function() {
