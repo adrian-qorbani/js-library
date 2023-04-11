@@ -1,43 +1,23 @@
 // JSON and Variables
 let myLibrary = [
-  // {
-  //   title: "Les Miserables",
-  //   author: "Victor Hugo",
-  //   pages: 1200,
-  // },
-  // {
-  //   title: "To Kill a Mockingbird",
-  //   author: "Harper Lee",
-  //   pages: 360,
-  // },
-  // {
-  //   title: "The Dean",
-  //   author: "Jalal Al-Ahmad",
-  //   pages: 210,
-  // },
+
 ];
 
 const tbody = document.getElementById('tbody');
 
 // the book constructor
-function Book(title, author, pages, read = true) {
+function Book(title, author, pages) {
   // the constructor ...
+  
   this.title = title;
   this.author = author;
   this.pages = pages;
-  this.read = read;
-
-  // adding to HTML
-  // let tr = "<tr>";
-  // tr += "<td>" + title + "</td>" + "<td>" + author+ "</td>" + "<td>" + pages+ "</td>" + "<td>" + read+ "</td></tr>";
-  // /* We add the table row to the table body */
-  // tbody.innerHTML += tr;
-  // bookshelfDisplay(myLibrary);
 }
 
-// Book.prototype.isRead = function() {
-//   return this.read = !this.read;
-// }
+// Read? status on the book
+Book.prototype.isRead = function() {
+  return this.read;
+}
 
 // add book to the library
 function addBookToLibrary(title,author,pages) {
@@ -58,7 +38,7 @@ function addBookToLibrary(title,author,pages) {
   bookAuthor.innerText = author;
   bookPages.innerText = pages;
   bookRemoveBtn.innerText = 'Remove';
-  bookIsRead.innerText = 'Read';
+  bookIsRead.innerText = 'Not Read';
 
 
   bookRemoveBtn.addEventListener("click", function() {
@@ -67,8 +47,7 @@ function addBookToLibrary(title,author,pages) {
 
   bookIsRead.addEventListener("click", function() {
       testObj.isRead = !testObj.isRead;
-      testObj.isRead ? bookIsRead.innerText = 'Not Read' : bookIsRead.innerText = 'Read'
-      // bookIsRead.innerText = 'Not Read'
+      testObj.isRead ? bookIsRead.innerText = 'Read' : bookIsRead.innerText = 'Not Read'
   })
 
   bookBtn.appendChild(bookRemoveBtn);
@@ -82,29 +61,6 @@ function addBookToLibrary(title,author,pages) {
 
   tbody.appendChild(bookRow);
 
-}
-
-// displaying the bookshelf
-function bookshelfDisplay(lib) {
-  // loop through the myLibrary and display books in the table...
-  // for (let i = 0; i < lib.length; i++) {
-  //   let tr = "<tr>";
-
-  //   tr += "<td>" + lib[i].title 
-  //   + "</td>" + "<td>" 
-  //   + lib[i].author 
-  //   + "</td>" + "<td>" + lib[i].pages 
-  //   + "</td>" + "<td>" + lib[i].actions 
-  //   + "</td></tr>";
-
-  //   /* We add the table row to the table body */
-  //   tbody.innerHTML += tr;
-// }
-}
-
-function removeBook() {
-  // remove a book from library
-  
 }
 
 function buttonReadUnread() {
@@ -142,6 +98,3 @@ function submitNewBook(event) {
 
 const newBookForm = document.querySelector('form');
 newBookForm.addEventListener('submit', submitNewBook);
-
-// Execution
-bookshelfDisplay(myLibrary)
