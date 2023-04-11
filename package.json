@@ -1,0 +1,17 @@
+{
+  "name": "js-library",
+  "version": "1.0.0",
+  "description": "This a Javascript Library for Node.js Path (Odin Project) written in HTML5, CSS3 and 100 lines of pure Javascript.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.38.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5"
+  }
+}
