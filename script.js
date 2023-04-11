@@ -1,5 +1,5 @@
 // JSON and Variables
-let myLibrary = [
+const myLibrary = [
 
 ];
 
@@ -8,31 +8,30 @@ const tbody = document.getElementById('tbody');
 // the book constructor
 function Book(title, author, pages) {
   // the constructor ...
-  
+
   this.title = title;
   this.author = author;
   this.pages = pages;
 }
 
 // Read? status on the book
-Book.prototype.isRead = function() {
+Book.prototype.isRead = function () {
   return this.read;
-}
+};
 
 // add book to the library
-function addBookToLibrary(title,author,pages) {
+function addBookToLibrary(title, author, pages) {
   // do stuff
-  let testObj = new Book(title,author,pages);
+  const testObj = new Book(title, author, pages);
   myLibrary.push(testObj);
 
-  let bookRow = document.createElement("tr");
-  let bookTitle = document.createElement("td");
-  let bookAuthor = document.createElement("td");
-  let bookPages = document.createElement("td");
-  let bookBtn = document.createElement("td");
-  let bookRemoveBtn = document.createElement("button");
-  let bookIsRead = document.createElement("button");
-
+  const bookRow = document.createElement('tr');
+  const bookTitle = document.createElement('td');
+  const bookAuthor = document.createElement('td');
+  const bookPages = document.createElement('td');
+  const bookBtn = document.createElement('td');
+  const bookRemoveBtn = document.createElement('button');
+  const bookIsRead = document.createElement('button');
 
   bookTitle.innerText = title;
   bookAuthor.innerText = author;
@@ -40,15 +39,14 @@ function addBookToLibrary(title,author,pages) {
   bookRemoveBtn.innerText = 'Remove';
   bookIsRead.innerText = 'Read?';
 
-
-  bookRemoveBtn.addEventListener("click", function() {
+  bookRemoveBtn.addEventListener('click', () => {
     bookRow.remove();
   });
 
-  bookIsRead.addEventListener("click", function() {
-      testObj.isRead = !testObj.isRead;
-      testObj.isRead ? bookIsRead.innerText = 'Read' : bookIsRead.innerText = 'Not Read'
-  })
+  bookIsRead.addEventListener('click', () => {
+    testObj.isRead = !testObj.isRead;
+    testObj.isRead ? bookIsRead.innerText = 'Read' : bookIsRead.innerText = 'Not Read';
+  });
 
   bookBtn.appendChild(bookRemoveBtn);
   bookBtn.appendChild(bookIsRead);
@@ -58,29 +56,22 @@ function addBookToLibrary(title,author,pages) {
   bookRow.appendChild(bookPages);
   bookRow.appendChild(bookBtn);
 
-
   tbody.appendChild(bookRow);
-
-}
-
-function buttonReadUnread() {
-  // set read or unread a book
-  this.isRead != true;
 }
 
 function openForm() {
-  document.getElementById("myForm").style.display = "block";
+  document.getElementById('myForm').style.display = 'block';
 }
 
 function closeForm() {
-  document.getElementById("myForm").style.display = "none";
+  document.getElementById('myForm').style.display = 'none';
 }
 
 // Pop-up Form
-const addButton = document.querySelector("#add-book");
-addButton.addEventListener("click", () => openForm());
-const closeButton = document.querySelector("#button-cancel");
-closeButton.addEventListener("click", () => closeForm());
+const addButton = document.querySelector('#add-book');
+addButton.addEventListener('click', () => openForm());
+const closeButton = document.querySelector('#button-cancel');
+closeButton.addEventListener('click', () => closeForm());
 
 // Add a Book (Form into JSON)
 
@@ -93,7 +84,7 @@ function submitNewBook(event) {
   const author = data.get('author');
   const pages = data.get('pages');
 
-  addBookToLibrary(title,author,pages)
+  addBookToLibrary(title, author, pages);
 }
 
 const newBookForm = document.querySelector('form');
