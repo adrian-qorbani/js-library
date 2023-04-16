@@ -6,18 +6,30 @@ const myLibrary = [
 const tbody = document.getElementById('tbody');
 
 // the book constructor
-function Book(title, author, pages) {
-  // the constructor ...
+// function Book(title, author, pages) {
+//   // the constructor ...
 
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-}
+//   this.title = title;
+//   this.author = author;
+//   this.pages = pages;
+// }
 
 // Read? status on the book
-Book.prototype.isRead = function () {
-  return this.read;
-};
+// Book.prototype.isRead = function () {
+//   return this.read;
+// };
+
+class Book {
+  constructor(title, author, pages) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+  }
+
+  isRead() {
+    return this.read;
+  }
+}
 
 // add book to the library
 function addBookToLibrary(title, author, pages) {
