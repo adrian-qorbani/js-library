@@ -1,23 +1,7 @@
 // JSON and Variables
-const myLibrary = [
+const myLibrary = [];
 
-];
-
-const tbody = document.getElementById('tbody');
-
-// the book constructor
-// function Book(title, author, pages) {
-//   // the constructor ...
-
-//   this.title = title;
-//   this.author = author;
-//   this.pages = pages;
-// }
-
-// Read? status on the book
-// Book.prototype.isRead = function () {
-//   return this.read;
-// };
+const tbody = document.getElementById("tbody");
 
 class Book {
   constructor(title, author, pages) {
@@ -37,32 +21,49 @@ function addBookToLibrary(title, author, pages) {
   const testObj = new Book(title, author, pages);
   myLibrary.push(testObj);
 
-  const bookRow = document.createElement('tr');
-  const bookTitle = document.createElement('td');
-  const bookAuthor = document.createElement('td');
-  const bookPages = document.createElement('td');
-  const bookBtn = document.createElement('td');
-  const bookRemoveBtn = document.createElement('button');
-  const bookIsRead = document.createElement('button');
+  const bookRow = document.createElement("tr");
+  const bookTitle = document.createElement("td");
+  const bookAuthor = document.createElement("td");
+  const bookPages = document.createElement("td");
+  const bookBtn = document.createElement("td");
+  const bookRemoveBtn = document.createElement("button");
+  const bookIsRead = document.createElement("button");
 
   bookTitle.innerText = title;
   bookAuthor.innerText = author;
   bookPages.innerText = pages;
-  bookRemoveBtn.innerText = 'Remove';
-  bookIsRead.innerText = 'Read?';
+  bookRemoveBtn.innerText = "Remove";
+  bookIsRead.innerText = "Read?";
 
-  bookRemoveBtn.addEventListener('click', () => {
+  bookRemoveBtn.addEventListener("click", () => {
+    console.log(`removed ${testObj.title}`);
+    deleteBook(findBook(myLibrary, testObj.title));
     bookRow.remove();
   });
 
-  bookIsRead.addEventListener('click', () => {
+  bookIsRead.addEventListener("click", () => {
     testObj.isRead = !testObj.isRead;
-    testObj.isRead ? bookIsRead.innerText = 'Read' : bookIsRead.innerText = 'Not Read';
+    testObj.isRead
+      ? (bookIsRead.innerText = "Read")
+      : (bookIsRead.innerText = "Not Read");
   });
+  // find book function
+  function findBook(libArray, title) {
+    if (libArray.length === 0 || libArray === null) {
+      return;
+    }
+    for (book of libArray)
+      if (book.title === title) {
+        return libArray.indexOf(book);
+      }
+  }
+  // delete book function
+  function deleteBook(currentBook) {
+    myLibrary.splice(currentBook, currentBook + 1);
+  }
 
   bookBtn.appendChild(bookRemoveBtn);
   bookBtn.appendChild(bookIsRead);
-
   bookRow.appendChild(bookTitle);
   bookRow.appendChild(bookAuthor);
   bookRow.appendChild(bookPages);
@@ -70,20 +71,21 @@ function addBookToLibrary(title, author, pages) {
 
   tbody.appendChild(bookRow);
 }
-
+// open add form
 function openForm() {
-  document.getElementById('myForm').style.display = 'block';
+  document.getElementById("myForm").style.display = "block";
 }
-
+// close add form
 function closeForm() {
-  document.getElementById('myForm').style.display = 'none';
+  document.getElementById("myForm").style.display = "none";
 }
 
 // Pop-up Form
-const addButton = document.querySelector('#add-book');
-addButton.addEventListener('click', () => openForm());
-const closeButton = document.querySelector('#button-cancel');
-closeButton.addEventListener('click', () => closeForm());
+const addButton = document.querySelector("#add-book");
+addButton.addEventListener("click", () => openForm());
+
+const closeButton = document.querySelector("#button-cancel");
+closeButton.addEventListener("click", () => closeForm());
 
 // Add a Book (Form into JSON)
 
@@ -92,12 +94,12 @@ function submitNewBook(event) {
   closeForm();
 
   const data = new FormData(event.target);
-  const title = data.get('title');
-  const author = data.get('author');
-  const pages = data.get('pages');
+  const title = data.get("title");
+  const author = data.get("author");
+  const pages = data.get("pages");
 
   addBookToLibrary(title, author, pages);
 }
 
-const newBookForm = document.querySelector('form');
-newBookForm.addEventListener('submit', submitNewBook);
+const newBookForm = document.querySelector("form");
+newBookForm.addEventListener("submit", submitNewBook);
