@@ -1,10 +1,12 @@
 // JSON and Variables
 const myLibrary = [];
+// stringify for local storage and then store
+localStorage.setItem('name',JSON.stringify(myLibrary));
 
 const tbody = document.getElementById("tbody");
 
 class Book {
-  constructor(title, author, pages) {
+  constructor(title = "Untitled", author = "Unknown", pages = 0) {
     this.title = title;
     this.author = author;
     this.pages = pages;
