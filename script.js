@@ -37,8 +37,9 @@ function addBookToLibrary(title, author, pages) {
   bookAuthor.innerText = author;
   bookPages.innerText = pages;
   bookRemoveBtn.innerText = "Remove";
+  bookRemoveBtn.classList.add("btn-remove");
   bookIsRead.innerText = "Read?";
-
+  
   bookRemoveBtn.addEventListener("click", () => {
     console.log(`removed ${testObj.title}`);
     deleteBook(findBook(myLibrary, testObj.title));

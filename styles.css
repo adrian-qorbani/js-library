@@ -61,7 +61,7 @@ button.focus {
 button {
   background: #3498db;
   color: #ffffff;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 button:hover {
@@ -70,6 +70,12 @@ button:hover {
 
 .btn-add {
   font-size: 1.3rem;
+}
+
+.btn-remove {
+  background-color: red;
+  color: white;
+  margin-right: 5px;
 }
 
 .form-popup {
