@@ -1,7 +1,7 @@
 // JSON and Variables
-const myLibrary = [];
-// stringify for local storage and then store
-localStorage.setItem('name',JSON.stringify(myLibrary));
+let myLibrary = localStorage.getItem('books') ?
+JSON.parse(localStorage.getItem('books')) : [];
+
 
 const tbody = document.getElementById("tbody");
 
@@ -22,6 +22,8 @@ function addBookToLibrary(title, author, pages) {
   // do stuff
   const testObj = new Book(title, author, pages);
   myLibrary.push(testObj);
+  // itemsArray.push(testObj);
+  localStorage.setItem('books', JSON.stringify(myLibrary));
 
   const bookRow = document.createElement("tr");
   const bookTitle = document.createElement("td");
