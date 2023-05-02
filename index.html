@@ -29,13 +29,13 @@
                 <h2>Add a new Book</h2>
             
                 <label for="title"><b>Book Title</b></label>
-                <input type="text" placeholder="Enter the book title..." name="title" required>
+                <input type="text" placeholder="Enter the book title..." name="title" required minlength="3" maxlength="20">
             
                 <label for="author"><b>Author</b></label>
-                <input type="text" placeholder="Enter the book author..." name="author" required>
+                <input type="text" placeholder="Enter the book author..." name="author" required minlength="3" maxlength="20">
 
                 <label for="pages"><b>Pages</b></label>
-                <input type="text" placeholder="Enter No. of pages..." name="pages" required>
+                <input type="number" placeholder="Enter No. of pages..." name="pages" required min="1" max="4">
             
                 <button type="submit" class="btn">ADD</button>
                 <button type="button" class="btn cancel" id="button-cancel">Close</button>
